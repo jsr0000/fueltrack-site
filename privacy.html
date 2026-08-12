@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RacePlan Privacy Policy</title>
+    <title>FuelTrack Privacy &amp; Data</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.6; color: #1a1a1a; }
         h1 { font-size: 28px; margin-bottom: 4px; }
@@ -13,75 +13,151 @@
         .date { color: #666; font-size: 14px; margin-bottom: 32px; }
         ul { padding-left: 20px; }
         a { color: #339966; }
+        .summary { background: #f4f9f6; border-left: 3px solid #339966; padding: 12px 16px; border-radius: 4px; }
+        .summary ul { margin: 0; }
+        table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+        th, td { text-align: left; font-size: 15px; padding: 8px 10px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+        th { font-size: 14px; color: #666; font-weight: 600; }
+        footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e5e5; font-size: 14px; color: #666; }
+        footer a { margin-right: 14px; }
     </style>
 </head>
 <body>
-    <h1>RacePlan Privacy Policy</h1>
-    <p class="date">Last updated: 16 April 2026</p>
+    <h1>FuelTrack Privacy &amp; Data</h1>
+    <p class="date">Last updated: 12 August 2026</p>
 
-    <p>RacePlan ("we", "our", "the app") is a meal planning and training app for iOS. We take your privacy seriously. This policy explains what data we collect, how we use it, and your rights.</p>
+    <p>FuelTrack ("we", "our", "the app") is a training and nutrition app for iOS. It reads your workouts from Apple Health, turns them into daily macro targets, and lets you log what you eat. This page is the complete account of what data the app handles, what leaves your device, and what your rights are.</p>
 
-    <h2>1. Data We Collect</h2>
+    <div class="summary">
+        <ul>
+            <li>Your data lives on your device. We do not run an account database and hold no profile for you.</li>
+            <li>Your Apple Health history never leaves your device.</li>
+            <li>The AI features send the relevant text, photo, or numbers to Anthropic's Claude API through our proxy. No identity is attached — only a random device token.</li>
+            <li>No analytics, no tracking, no advertising, no data sold or shared.</li>
+        </ul>
+    </div>
 
-    <h3>Data stored on your device only</h3>
-    <p>The following data is stored locally on your device and is never transmitted to our servers or any third party:</p>
+    <h2>1. Data stored on your device only</h2>
+    <p>The following never leaves your device except where §5 says otherwise. It is held in the app's private storage and, for credentials, the iOS Keychain:</p>
     <ul>
-        <li><strong>Profile information</strong> — name, age, height, weight, sex, dietary preferences, allergies, cooking preferences, and fitness goals</li>
-        <li><strong>Meal plans and shopping lists</strong> — your weekly meal plans, recipe ratings, favourites, pinned meals, and shopping list state</li>
-        <li><strong>Training plans</strong> — your generated training schedule and session completion history</li>
-        <li><strong>App preferences</strong> — appearance, units, notification settings, and other configuration</li>
+        <li><strong>Profile</strong> — name, age, height, weight, sex, dietary preferences, allergies, fitness goal, profile photo</li>
+        <li><strong>Training plan</strong> — your generated schedule, session completion history, and adaptive adjustments</li>
+        <li><strong>Fuel log</strong> — daily macro targets, every food item you log, and any photos you take to log food</li>
+        <li><strong>App preferences</strong> — appearance, units, and notification settings</li>
+        <li><strong>Credentials</strong> — your Apple user identifier and a random device token, both in the Keychain</li>
     </ul>
 
-    <h3>Apple HealthKit data</h3>
-    <p>With your explicit permission, RacePlan reads the following data from Apple HealthKit:</p>
+    <h2>2. Apple Health (HealthKit)</h2>
+    <p>With your explicit permission, FuelTrack reads the following from Apple Health. It never writes to Apple Health.</p>
     <ul>
         <li>Active energy burned</li>
-        <li>Workouts (type, duration, distance)</li>
+        <li>Workouts — type, duration, distance</li>
+        <li>Heart rate — average and maximum per workout</li>
         <li>Step count</li>
         <li>Body weight</li>
     </ul>
-    <p>This data is used solely to personalise your daily macro targets and meal plans based on your training activity. HealthKit data is processed on your device and is never sent to external servers, shared with third parties, or used for advertising.</p>
+    <p>This is used to detect completed workouts and to set your daily macro targets. Processing happens on your device. Your Health history is never uploaded, never shared with third parties, never used for advertising, and never disclosed to data brokers. When a workout triggers an AI insight, a short summary of that <em>single</em> workout is included in the request — see §5.</p>
 
-    <h3>Camera and barcode scanning</h3>
-    <p>With your permission, RacePlan accesses your device camera to scan product barcodes. When you scan a barcode, the barcode number is sent to the <a href="https://world.openfoodfacts.org/">Open Food Facts</a> API (a free, open-source food database) to retrieve the product name and nutritional information. No personal data, health data, or device identifiers are included in these requests. No images are stored or transmitted — only the barcode number is sent.</p>
+    <h2>3. Sign in with Apple</h2>
+    <p>Signing in with Apple is required to use FuelTrack. We receive your Apple user identifier and, if you allow it, your name. <strong>We do not request your email address.</strong> The identifier is stored in your device's Keychain, is never sent to our servers, and is never included in any AI request.</p>
 
-    <h3>Sign in with Apple</h3>
-    <p>If you choose to sign in with Apple, we receive your Apple user identifier. This is stored securely in your device's Keychain. We do not receive or store your email address unless you choose to share it. You can also use the app without signing in.</p>
+    <h2>4. Camera and barcode scanning</h2>
+    <p>With your permission, FuelTrack uses your camera to scan product barcodes. The barcode number alone is sent to the <a href="https://world.openfoodfacts.org/">Open Food Facts</a> API to look up the product name and nutrition. No personal data, health data, or device identifier is included, and no image is transmitted or stored. Photos you take to log food by picture are stored locally and are sent only as described in §5.</p>
 
-    <h2>2. Data We Do Not Collect</h2>
+    <h2>5. AI features — exactly what is sent</h2>
+    <p>These features use Anthropic's Claude API: food logging by text, photo, or voice; the post-workout insight; the morning briefing; rest-day guidance; the weekly coaching summary; and race-day nutrition guidance.</p>
+    <p>Requests go over HTTPS to our own proxy server (a Cloudflare Worker), which holds the API key and forwards the request to Anthropic. The app itself never holds the key.</p>
+
+    <h3>Sent</h3>
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Why</th>
+        </tr>
+        <tr>
+            <td>The food description, photo, or voice transcription you submit</td>
+            <td>To identify the food and estimate its macros</td>
+        </tr>
+        <tr>
+            <td>Body weight and fitness goal</td>
+            <td>To calibrate portion and macro estimates</td>
+        </tr>
+        <tr>
+            <td>Today's or this week's macro targets and what you logged against them, including food names</td>
+            <td>To write feedback on how your fuelling landed</td>
+        </tr>
+        <tr>
+            <td>A summary of one completed workout — type, duration, distance, average and maximum heart rate, calories burned</td>
+            <td>To write the post-workout insight and the morning briefing</td>
+        </tr>
+        <tr>
+            <td>Training context — session titles, plan phase, fitness level, and how many sessions you completed this week</td>
+            <td>To make insights specific to your training block rather than generic</td>
+        </tr>
+        <tr>
+            <td>Your first name, where an insight addresses you directly</td>
+            <td>So the briefing reads as written for you</td>
+        </tr>
+        <tr>
+            <td>A random device token</td>
+            <td>Rate limiting only. Generated on device, not derived from your Apple ID, name, or any device identifier</td>
+        </tr>
+    </table>
+
+    <h3>Never sent</h3>
     <ul>
-        <li>We do not collect analytics or usage data</li>
-        <li>We do not use tracking or advertising frameworks</li>
-        <li>We do not sell, share, or transfer your personal data to third parties</li>
-        <li>We do not use cookies or web tracking technologies</li>
-        <li>We do not store any data on remote servers (all data stays on your device)</li>
+        <li><strong>Your Apple Health history</strong> — only the single-workout summary above, and only when an insight is generated</li>
+        <li><strong>Location or GPS data</strong> — never collected by the app at all</li>
+        <li><strong>Your Apple user identifier or email address</strong></li>
+        <li><strong>Your profile photo</strong></li>
+        <li><strong>Your photo library, contacts, or calendar</strong> — only the one image you choose to log</li>
+    </ul>
+    <p><strong>Voice logging</strong> is transcribed on your device by Apple's speech framework. Only the resulting text is sent; the audio never leaves your device.</p>
+
+    <h3>How Anthropic handles it</h3>
+    <p>Data sent through Anthropic's API is not used to train their models. Requests are processed and discarded. See <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a> for their full policy.</p>
+
+    <h3>If the AI is unavailable</h3>
+    <p>Every one of these features has an on-device, rule-based fallback built from the same data. When the API is unreachable, the app falls back to it — nothing is queued or retried later against your will.</p>
+
+    <h2>6. Subscription and free trial</h2>
+    <p>Purchases are handled entirely by Apple through StoreKit. We never see your payment details, card, or billing address.</p>
+    <p>So that the 7-day free trial cannot be restarted by deleting and reinstalling the app, the date your trial started is recorded in three places: on your device, in your own iCloud key-value storage, and against your random device token on our proxy server. Our server also keeps a monthly count of AI requests per device token, as a cost ceiling.</p>
+    <p><strong>That timestamp and that counter are the only data we hold outside your device.</strong> Neither contains your name, email, Apple identifier, health data, training plan, or food log. The trial record expires 90 days after it is written; the usage counter expires after 62 days.</p>
+
+    <h2>7. Data we do not collect</h2>
+    <ul>
+        <li>No analytics or usage tracking</li>
+        <li>No advertising or attribution SDKs, and no advertising identifier</li>
+        <li>No location data</li>
+        <li>No cookies or web tracking</li>
+        <li>We do not sell, rent, or share your personal data with third parties</li>
     </ul>
 
-    <h2>3. Third-Party Services</h2>
-    <ul>
-        <li><strong>Open Food Facts</strong> — when you scan a barcode, the barcode number is sent to the Open Food Facts API to retrieve nutritional data. No personal or health data is included. Open Food Facts is a non-profit, open-source project. See their <a href="https://world.openfoodfacts.org/terms-of-use">terms of use</a>.</li>
-        <li><strong>Anthropic Claude API</strong> (premium tier, future) — anonymised macro targets and dietary preferences (not personal health data) may be sent to Anthropic's servers for personalised meal plan generation. This will be clearly disclosed before the feature is enabled.</li>
-    </ul>
+    <h2>8. Retention and deletion</h2>
+    <p><strong>Delete Account</strong> — in the app, under Profile, or from the footer of the subscription screen. This immediately and permanently removes your profile, training plan, fuel log, logged food photos, your Apple user identifier, and your device token from the device. It cannot be undone.</p>
+    <p><strong>Deleting the app</strong> removes all local data with it.</p>
+    <p>One exception, stated plainly: the trial start date described in §6 is deliberately retained so the free trial cannot be restarted. It is a single date, holds nothing personal, and expires on the schedule above. Clearing your device token also orphans the server-side records, which then expire on their own.</p>
 
-    <h2>4. Data Retention and Deletion</h2>
-    <p>All your data is stored locally on your device. You can delete all RacePlan data at any time by:</p>
-    <ul>
-        <li>Signing out in the app (Profile > Sign Out)</li>
-        <li>Deleting the app from your device</li>
-    </ul>
-    <p>Since we do not store data on remote servers, deleting the app permanently removes all your data.</p>
+    <h2>9. Children's privacy</h2>
+    <p>FuelTrack is not directed at children under 16, and we do not knowingly collect data from children.</p>
 
-    <h2>5. Children's Privacy</h2>
-    <p>RacePlan is not directed at children under 16. We do not knowingly collect data from children.</p>
+    <h2>10. Not medical advice</h2>
+    <p>FuelTrack estimates macro targets and food macros to support training. It is not a medical device and does not provide medical or clinical nutrition advice. AI-generated macro estimates are estimates — you can edit any of them. Talk to a qualified professional before making significant changes to your diet or training, particularly if you have a medical condition.</p>
 
-    <h2>6. Changes to This Policy</h2>
-    <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <h2>11. Changes to this policy</h2>
+    <p>We may update this page from time to time. Changes are posted here with an updated date. Continued use of the app after a change constitutes acceptance of the updated policy.</p>
 
-    <h2>7. Contact</h2>
-    <p>If you have questions about this privacy policy, contact us at:</p>
-    <p><strong>Email:</strong> josh.raceplan@gmail.com</p>
+    <h2>12. Your rights</h2>
+    <p>Under UK GDPR and the Data Protection Act 2018 you have the right to access, correct, or delete your personal data. Because your data is held on your device, you exercise all three directly in the app at any time. For the trial timestamp and usage counter held against your device token, email us and we will delete them.</p>
 
-    <h2>8. Your Rights</h2>
-    <p>Under UK GDPR and the Data Protection Act 2018, you have the right to access, correct, or delete your personal data. Since all data is stored locally on your device, you have full control over it at all times.</p>
+    <h2>13. Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:josh.raceplan@gmail.com">josh.raceplan@gmail.com</a></p>
+
+    <footer>
+        <a href="/">Home</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="/support">Support</a>
+    </footer>
 </body>
 </html>
