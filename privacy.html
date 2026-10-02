@@ -24,7 +24,7 @@
 </head>
 <body>
     <h1>FuelTrack Privacy &amp; Data</h1>
-    <p class="date">Last updated: 12 August 2026</p>
+    <p class="date">Last updated: 2 October 2026</p>
 
     <p>FuelTrack ("we", "our", "the app") is a training and nutrition app for iOS. It reads your workouts from Apple Health, turns them into daily macro targets, and lets you log what you eat. This page is the complete account of what data the app handles, what leaves your device, and what your rights are.</p>
 
@@ -33,7 +33,7 @@
             <li>Your data lives on your device. We do not run an account database and hold no profile for you.</li>
             <li>Your Apple Health history never leaves your device.</li>
             <li>The AI features send the relevant text, photo, or numbers to Anthropic's Claude API through our proxy. No identity is attached — only a random device token.</li>
-            <li>No analytics, no tracking, no advertising, no data sold or shared.</li>
+            <li>Anonymous usage analytics you can switch off, and anonymous measurements of how the AI features perform. Neither is linked to you. No tracking, no advertising, no data sold or shared.</li>
         </ul>
     </div>
 
@@ -123,35 +123,40 @@
     <h2>6. Subscription and free trial</h2>
     <p>Purchases are handled entirely by Apple through StoreKit. We never see your payment details, card, or billing address.</p>
     <p>So that the 7-day free trial cannot be restarted by deleting and reinstalling the app, the date your trial started is recorded in three places: on your device, in your own iCloud key-value storage, and against your random device token on our proxy server. Our server also keeps a monthly count of AI requests per device token, as a cost ceiling.</p>
-    <p><strong>That timestamp and that counter are the only data we hold outside your device.</strong> Neither contains your name, email, Apple identifier, health data, training plan, or food log. The trial record expires 90 days after it is written; the usage counter expires after 62 days.</p>
+    <p><strong>That timestamp and that counter are the only data we hold against your device token.</strong> Neither contains your name, email, Apple identifier, health data, training plan, or food log. The trial record expires 90 days after it is written; the usage counter expires after 62 days. The anonymous analytics and service measurements in §7 are held separately and carry no device token.</p>
 
-    <h2>7. Data we do not collect</h2>
+    <h2>7. Anonymous usage analytics and service measurements</h2>
+    <p><strong>Usage analytics.</strong> To learn which features help, the app sends anonymous usage events to our own server — for example "a meal was logged by barcode", "the app was opened today", "onboarding reached the goal step", or "the subscription screen was closed without a purchase". Each event carries the app version, how many days ago the app was installed, and a random identifier created on your device.</p>
+    <p>That identifier is not linked to your Apple ID, name, email, or device token, and is replaced if you delete your account. We never send what you ate, your macros, body stats, training plan, Health data, or anything you type. Events are kept for up to three months. Turn usage analytics off at any time in <strong>Profile → Settings → Share Anonymous Usage</strong>.</p>
+    <p><strong>Service measurements.</strong> Each time an AI feature runs, our server records what kind of request it was (for example "text food log" or "daily insight"), which Claude model answered, how many tokens it used, how long it took, and whether it succeeded. This carries no identifier of any kind and none of the content sent or returned. We use it to keep the AI features fast, reliable, and affordable. Because it describes our service rather than you, it is not affected by the analytics setting above. It is kept for up to three months.</p>
+
+    <h2>8. Data we do not collect</h2>
     <ul>
-        <li>No analytics or usage tracking</li>
+        <li>No tracking — nothing links what you do in FuelTrack with data from other companies' apps or websites</li>
         <li>No advertising or attribution SDKs, and no advertising identifier</li>
         <li>No location data</li>
         <li>No cookies or web tracking</li>
         <li>We do not sell, rent, or share your personal data with third parties</li>
     </ul>
 
-    <h2>8. Retention and deletion</h2>
+    <h2>9. Retention and deletion</h2>
     <p><strong>Delete Account</strong> — in the app, under Profile, or from the footer of the subscription screen. This immediately and permanently removes your profile, training plan, fuel log, logged food photos, your Apple user identifier, and your device token from the device. It cannot be undone.</p>
     <p><strong>Deleting the app</strong> removes all local data with it.</p>
     <p>One exception, stated plainly: the trial start date described in §6 is deliberately retained so the free trial cannot be restarted. It is a single date, holds nothing personal, and expires on the schedule above. Clearing your device token also orphans the server-side records, which then expire on their own.</p>
 
-    <h2>9. Children's privacy</h2>
+    <h2>10. Children's privacy</h2>
     <p>FuelTrack is not directed at children under 16, and we do not knowingly collect data from children.</p>
 
-    <h2>10. Not medical advice</h2>
+    <h2>11. Not medical advice</h2>
     <p>FuelTrack estimates macro targets and food macros to support training. It is not a medical device and does not provide medical or clinical nutrition advice. AI-generated macro estimates are estimates — you can edit any of them. Talk to a qualified professional before making significant changes to your diet or training, particularly if you have a medical condition.</p>
 
-    <h2>11. Changes to this policy</h2>
+    <h2>12. Changes to this policy</h2>
     <p>We may update this page from time to time. Changes are posted here with an updated date. Continued use of the app after a change constitutes acceptance of the updated policy.</p>
 
-    <h2>12. Your rights</h2>
-    <p>Under UK GDPR and the Data Protection Act 2018 you have the right to access, correct, or delete your personal data. Because your data is held on your device, you exercise all three directly in the app at any time. For the trial timestamp and usage counter held against your device token, email us and we will delete them.</p>
+    <h2>13. Your rights</h2>
+    <p>Under UK GDPR and the Data Protection Act 2018 you have the right to access, correct, or delete your personal data. Because your data is held on your device, you exercise all three directly in the app at any time. For the trial timestamp and usage counter held against your device token, email us and we will delete them. The anonymous analytics in §7 cannot be tied back to you, so they cannot be retrieved or deleted per person; you can stop them at any time in Settings, and deleting your account replaces the identifier they carry.</p>
 
-    <h2>13. Contact</h2>
+    <h2>14. Contact</h2>
     <p><strong>Email:</strong> <a href="mailto:josh.raceplan@gmail.com">josh.raceplan@gmail.com</a></p>
 
     <footer>
